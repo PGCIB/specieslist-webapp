@@ -289,12 +289,11 @@
                 <div class="message alert alert-info"><g:message code="upload.instructions.hasList" default="Upload a list"/></div>
             </g:if>
 
-            <p>A species list should consist of a list of scientific or common names and some optional associated properties. Provide input consisting of a header line and some rows of data and we will attempt to map your list to taxon names known to the ALA system. A species list can be uploaded either as a CSV file, or as copy and pasted text.</p>
+            <p><g:message code="upload.heading.instructions" default="A species list should consist of a list of scientific or common names and some optional associated properties. Provide input consisting of a header line and some rows of data and we will attempt to map your list to taxon names known to the ALA system. A species list can be uploaded either as a CSV file, or as copy and pasted text."/></p>
 
             <div id="initialPaste">
-                <h3>Option 1: Select a CSV file to upload here</h3>
-                Please note that the file upload feature requires a modern browser (such as Chrome, Firefox, or Internet
-                Explorer 10)
+                <h3><g:message code="upload.initialpaste.h301" default="Option 1: Select a CSV file to upload here"/></h3>
+                <p><g:message code="upload.initialpaste.txt01" default="Please note that the file upload feature requires a modern browser (such as Chrome, Firefox, or Internet Explorer 10)."/></p>
 
                 <g:uploadForm name="csvUploadForm" id="csvUploadForm" action="parseData">
                     <div class="fileupload fileupload-new pull-left" data-provides="fileupload">
@@ -304,7 +303,7 @@
                                 <span class="fileupload-preview"></span>
                             </button>
                             <button class="btn btn-default btn-file">
-                                <span class="fileupload-new">Select file</span>
+                                <span class="fileupload-new"><g:message code="upload.initialpaste.btn01" default="Select file"/></span>
                                 <span class="fileupload-exists">Change</span>
                                 <input type="file" name="csvFile" id="csvFileUpload"/>
                             </button>
@@ -315,20 +314,18 @@
 
                 <div style="clear: both"></div>
 
-                <g:submitButton id="checkData2" class="actionButton btn btn-default" name="checkData" value="Check Data"
+                <g:submitButton id="checkData2" class="actionButton btn btn-default" name="checkData" value="${g.message(code:'upload.initialpaste.btn02')}"
                                 onclick="javascript:parseColumns();"/>
 
-                <h3>Option 2: Paste your species list here</h3>
-                <p>To paste your data, click the rectangle below, and type <strong>control-V (Windows)</strong>
-                    or <strong>command-V (Macintosh)</strong>.
-                </p>
+                <h3><g:message code="upload.initialpaste.h302" default="Option 2: Paste your species list here"/></h3>
+                <p><g:message code="upload.initialpaste.txt02" default="To paste your data, click the rectangle below, and type Control-V (Windows) or Command-V (Macintosh)."/></p>
 
                 <g:textArea
                         id="copyPasteData"
                         name="copyPasteData" rows="10" cols="120" style="width:100%;"
                         onkeyup="javascript:window.setTimeout('parseColumns()', 500, true);"></g:textArea>
 
-                <g:submitButton id="checkData" class="actionButton btn btn-default" name="checkData" value="Check Data"
+                <g:submitButton id="checkData" class="actionButton btn btn-default" name="checkData" value="${g.message(code:'upload.initialpaste.btn03')}"
                                 onclick="javascript:parseColumns();"/>
                 <p id="processingInfo"></p>
 

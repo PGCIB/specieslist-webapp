@@ -39,12 +39,12 @@
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-8">
-                <h1 class="subject-subtitle">My species lists</h1>
+                <h1 class="subject-subtitle"><g:message code="list.subtitle" default="Mis listas de especies"/></h1>
             </div>
 
             <div class="col-md-4">
                 <g:link controller="speciesList" action="upload" class="btn btn-ala pull-right"
-                        title="Add Species List">Upload a list</g:link>
+                        title="Add Species List"><g:message code="list.link01" default="Upload a list"/></g:link>
             </div>
         </div><!--inner-->
 
@@ -55,7 +55,7 @@
                 <g:render template="/speciesList"/>
             </g:if>
             <g:else>
-                <p>You do not have any available species lists.</p>
+                <p><g:message code="list.totallists0" default="You do not have any available species lists."/></p>
             </g:else>
         </div>
     </div>

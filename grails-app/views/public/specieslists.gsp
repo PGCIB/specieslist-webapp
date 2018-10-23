@@ -26,14 +26,14 @@
         <header id="page-header">
             <div class="row">
                 <hgroup class="col-md-8">
-                    <h2 class="subject-title">Species lists</h2>
+                    <h2 class="subject-title"><g:message code="public.specieslists.header01" default="Species Lists"/></h2>
                 </hgroup>
 
                 <div class="col-md-4">
                     <span class="pull-right">
                         <a class="btn btn-ala" title="Add Species List"
-                           href="${request.contextPath}/speciesList/upload">Upload a list</a>
-                        <a class="btn btn-ala" title="My Lists" href="${request.contextPath}/speciesList/list">My Lists</a>
+                           href="${request.contextPath}/speciesList/upload"><g:message code="public.specieslists.btn01" default="Upload a list"/></a>
+                        <a class="btn btn-ala" title="My Lists" href="${request.contextPath}/speciesList/list"><g:message code="public.specieslists.btn02" default="My lists"/></a>
                     </span>
                 </div>
             </div><!--.row-->
@@ -48,25 +48,22 @@
                     </div>
                 </g:if>
                 <p>
-                    This tool allows you to upload a list of species, and work with that list within the Atlas.
-                    <br/>
-                    Click "Upload a list" to upload your own list of taxa.
+                    <g:message code="public.specieslists.p01" default="This tool allows you to upload a list of species and work with that list within the Atlas. Click Upload a list to upload your own list of taxa."/>
                 </p>
                 <g:if test="${lists && total > 0}">
                     <p>
-                        Below is a listing of user provided species lists. You can use these lists to work
-                        with parts of the Atlas.
+                        <g:message code="public.specieslists.p02" default="Below is a listing of user provided species lists. You can use these lists to work with parts of the Atlas."/>
                     </p>
                     <g:render template="/speciesList"/>
                 </g:if>
                 <g:elseif test="${params.q}">
                     <form class="listSearchForm">
-                        <p>No Species Lists found for: <b>${params.q}</b></p>
-                        <button class="btn btn-primary" type="submit">Clear search</button>
+                        <p><g:message code="public.specieslists.p02" default="No species lists found "/> for: <b>${params.q}</b></p>
+                        <button class="btn btn-primary" type="submit"><g:message code="public.specieslists.b03" default="Clear search"/></button>
                     </form>
                 </g:elseif>
                 <g:else>
-                    <p>There are no Species Lists available</p>
+                    <p><g:message code="public.specieslists.p04" default="There are no species lists available"/></p>
                 </g:else>
             </div>
         </div>
