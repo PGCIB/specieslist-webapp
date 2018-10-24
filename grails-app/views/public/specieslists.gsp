@@ -31,8 +31,7 @@
 
                 <div class="col-md-4">
                     <span class="pull-right">
-                        <a class="btn btn-ala" title="Add Species List"
-                           href="${request.contextPath}/speciesList/upload"><g:message code="public.specieslists.btn01" default="Upload a list"/></a>
+                        <!-- <a class="btn btn-ala" title="Add Species List" href="${request.contextPath}/speciesList/upload"><g:message code="public.specieslists.btn01" default="Upload a list"/></a> -->
                         <a class="btn btn-ala" title="My Lists" href="${request.contextPath}/speciesList/list"><g:message code="public.specieslists.btn02" default="My lists"/></a>
                     </span>
                 </div>
