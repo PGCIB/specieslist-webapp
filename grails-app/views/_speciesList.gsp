@@ -74,10 +74,10 @@
     <form class="listSearchForm">
         <div class="input-group" id="searchLists">
             <input id="appendedInputButton" class="form-control" name="q" type="text" value="${params.q}"
-                   placeholder="Search in list name, description or owner">
+                   placeholder="${g.message(code:'specieslist.input01')}">
 
             <div class="input-group-btn">
-                <button class="btn btn-default" type="submit">Search</button>
+                <button class="btn btn-default" type="submit"><g:message code="specieslist.btn01" default="Search"/></button>
             </div>
         </div>
     </form>
@@ -85,13 +85,13 @@
 <div class="col-md-3">
     <form class="listSearchForm">
         <g:if test="${params.q}">
-            <button class="btn btn-primary" type="submit">Clear search</button>
+            <button class="btn btn-primary" type="submit"><g:message code="specieslist.btn02" default="Clear Search"/></button>
         </g:if>
     </form>
 </div>
     <div class="col-md-4">
         <div class="form-group pull-right">
-            <label class="control-label">Items per page:</label>
+            <label class="control-label"><g:message code="specieslist.lbl01" default="Items per page:"/></label>
             <select id="maxItems" onchange="reloadWithMax(this)">
                 <g:each in="${[10,25,50,100]}" var="max">
                     <option ${(params.max == max)?'selected="selected"':''}>${max}</option>

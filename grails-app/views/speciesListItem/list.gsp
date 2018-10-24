@@ -384,12 +384,12 @@
             <div class="col-md-6">
                 <div class="row">
                     <h2 class="subject-subtitle">
-                        Species List: <a href="${collectoryUrl}/public/show/${params.id}"
+                        <g:message code="specieslistItem.list.h201" default="Species List:"/> <a href="${collectoryUrl}/public/show/${params.id}"
                                          title="view Date Resource page">${speciesList?.listName}</a>
                         &nbsp;&nbsp;
                         <div class="btn-group btn-group" id="listActionButtons">
                             <a href="#" id="toggleListInfo" class="btn btn-default btn-sm"><i
-                                    class="glyphicon glyphicon-info-sign "></i> List info</a>
+                                    class="glyphicon glyphicon-info-sign "></i> <g:message code="specieslistItem.list.btn01" default="List info"/></a>
                             <g:if test="${userCanEditPermissions}">
                                 <a href="#" class="btn btn-default btn-sm" data-target="#modal" data-toggle="modal"><i
                                         class="glyphicon glyphicon-user "></i> Edit permissions</a>
@@ -454,13 +454,13 @@
                     <div class="col-md-12">
                         <div class="pull-right margin-top-10">
                             <a href="#download" class="btn btn-ala" title="View the download options for this species list."
-                               id="downloadLink">Download</a>
+                               id="downloadLink"><g:message code="specieslistItem.list.btn02" default="Download"/></a>
 
                             <a class="btn btn-ala" title="View occurrences for up to ${maxDownload} species on the list"
-                               href="${request.contextPath}/speciesList/occurrences/${params.id}${params.toQueryString()}&type=Search">View occurrence records</a>
+                               href="${request.contextPath}/speciesList/occurrences/${params.id}${params.toQueryString()}&type=Search"><g:message code="specieslistItem.list.btn03" default="View occurrence records"/></a>
 
-                            <a href="${request.contextPath}/speciesList/spatialPortal/${params.id}${params.toQueryString()}&type=Search"
-                               class="btn btn-ala" title="View the spatial portal.">View in spatial portal</a>
+                            <!-- <a href="${request.contextPath}/speciesList/spatialPortal/${params.id}${params.toQueryString()}&type=Search"
+                               class="btn btn-ala" title="View the spatial portal.">View in spatial portal</a> -->
                         </div> <!-- rightfloat -->
                     </div>
                 </div>
@@ -759,25 +759,25 @@
                     <div class="matchStats">
                         <p>
                             <span class="count">${totalCount}</span>
-                            Number of Taxa
+                            <g:message code="specieslistItem.list.lbl02" default="Number of taxa"/>
                         </p>
 
                         <p>
                             <span class="count">${distinctCount}</span>
-                            Distinct Species
+                            <g:message code="specieslistItem.list.lbl03" default="Distinct species"/>
                         </p>
                         <g:if test="${hasUnrecognised && noMatchCount != totalCount}">
                             <p>
                                 <span class="count">${noMatchCount}</span>
                                 <g:link action="list" id="${params.id}" title="View unrecognised taxa"
-                                        params="${[fq: sl.buildFqList(fqs: fqs, fq: "guid:null"), max: params.max]}">Unrecognised Taxa</g:link>
+                                        params="${[fq: sl.buildFqList(fqs: fqs, fq: "guid:null"), max: params.max]}"><g:message code="specieslistItem.list.lbl04" default="Unrecognized taxa"/></g:link>
                             </p>
                         </g:if>
                     </div>
                 </section>
                 <section class="refine" id="refine">
                     <g:if test="${facets.size() > 0 || params.fq}">
-                        <h4 class="hidden-xs">Refine results</h4>
+                        <h4 class="hidden-xs"><g:message code="specieslistItem.list.lbl05" default="Refine results"/></h4>
                         <h4 class="visible-xs">
                             <a href="#" id="toggleFacetDisplay"><i class="glyphicon glyphicon-chevron-right"
                                                                    id="facetIcon"></i>
@@ -846,9 +846,9 @@
             <div class="col-md-6">
                 <div id="listItemView" class="btn-group">
                     <a class="btn btn-default btn-sm list disabled" title="View as detailed list" href="#list"><i
-                            class="glyphicon glyphicon-th-list"></i> list</a>
+                            class="glyphicon glyphicon-th-list"></i> <g:message code="specieslistItem.list.btn04" default="list"/></a>
                     <a class="btn btn-default btn-sm grid" title="View as thumbnail image grid" href="#grid"><i
-                            class="glyphicon glyphicon-th"></i> grid</a>
+                            class="glyphicon glyphicon-th"></i> <g:message code="specieslistItem.list.btn05" default="grid"/></a>
                 </div>
             </div>
             <div class="col-md-6">
@@ -858,10 +858,10 @@
 
                         <div class="input-group" id="searchListItem">
                             <input class="form-control" id="searchInputButton" name="q" type="text" value="${params.q}"
-                                   placeholder="Search by Supplied Name">
+                                   placeholder="${g.message(code:'specieslistItem.list.input01')}">
 
                             <div class="input-group-btn">
-                                <button class="btn btn-default" type="submit">Search</button>
+                                <button class="btn btn-default" type="submit"><g:message code="specieslistItem.list.btn06" default="Search"/></button>
                                 <g:if test="${params.q}">
                                     <button class="btn btn-primary" onclick="resetSearch()">Clear search</button>
                                 </g:if>
@@ -925,15 +925,15 @@
                         <table class="tableList table table-bordered table-striped" id="speciesListTable">
                             <thead>
                             <tr>
-                                <th class="action">Action</th>
-                                <g:sortableColumn property="rawScientificName" title="Supplied Name"
+                                <th class="action"><g:message code="specieslistItem.list.hdr01" default="Action"/></th>
+                                <g:sortableColumn property="rawScientificName" title="${g.message(code:'specieslistItem.list.hdr02')}"
                                                   params="${[fq: fqs]}"></g:sortableColumn>
-                                <g:sortableColumn property="matchedName" title="Scientific Name (matched)"
+                                <g:sortableColumn property="matchedName" title="${g.message(code:'specieslistItem.list.hdr03')}"
                                                   params="${[fq: fqs]}"></g:sortableColumn>
-                                <th>Image</th>
-                                <g:sortableColumn property="author" title="Author (matched)"
+                                <th><g:message code="specieslistItem.list.hdr04" default="Image"/></th>
+                                <g:sortableColumn property="author" title="${g.message(code:'specieslistItem.list.hdr05')}"
                                                   params="${[fq: fqs]}"></g:sortableColumn>
-                                <g:sortableColumn property="commonName" title="Common Name (matched)"
+                                <g:sortableColumn property="commonName" title="${g.message(code:'specieslistItem.list.hdr06')}"
                                                   params="${[fq: fqs]}"></g:sortableColumn>
                                 <g:each in="${keys}" var="key">
                                     <th>${key}</th>
@@ -1003,7 +1003,7 @@
                 </section>
             </div> <!-- /#listView -->
             <div class="searchWidgets">
-                Items per page:
+                <g:message code="specieslistItem.list.lbl01" default="Items per page:"/>
                 <select id="maxItems" onchange="reloadWithMax(this)">
                     <g:each in="${[10, 25, 50, 100]}" var="max">
                         <option ${(params.max == max) ? 'selected="selected"' : ''}>${max}</option>
