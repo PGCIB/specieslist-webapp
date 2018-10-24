@@ -935,9 +935,9 @@
                                                   params="${[fq: fqs]}"></g:sortableColumn>
                                 <g:sortableColumn property="commonName" title="${g.message(code:'specieslistItem.list.hdr06')}"
                                                   params="${[fq: fqs]}"></g:sortableColumn>
-                                <g:each in="${keys}" var="key">
+                                <!-- <g:each in="${keys}" var="key">
                                     <th>${key}</th>
-                                </g:each>
+                                </g:each> -->
                             </tr>
                             </thead>
                             <tbody>
