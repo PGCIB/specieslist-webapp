@@ -989,12 +989,12 @@
                                     </td>
                                     <td>${result.author}</td>
                                     <td id="cn_${result.guid}">${result.commonName}</td>
-                                    <g:each in="${keys}" var="key">
+                                    <!-- <g:each in="${keys}" var="key">
                                         <g:set var="kvp" value="${result.kvpValues.find { it.key == key }}"/>
                                         <g:set var="val" value="${kvp?.vocabValue ?: kvp?.value}"/>
                                         <td class="kvp ${val?.length() > 35 ? 'scrollWidth' : ''}"><div>${val}</div>
                                         </td>
-                                    </g:each>
+                                    </g:each> -->
                                 </tr>
                             </g:each>
                             </tbody>
