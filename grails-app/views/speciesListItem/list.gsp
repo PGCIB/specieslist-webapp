@@ -384,8 +384,9 @@
             <div class="col-md-6">
                 <div class="row">
                     <h2 class="subject-subtitle">
-                        <g:message code="specieslistItem.list.h201" default="Species List:"/> <a href="${collectoryUrl}/public/show/${params.id}"
-                                         title="view Date Resource page">${speciesList?.listName}</a>
+                        <!-- <g:message code="specieslistItem.list.h201" default="Species List:"/> <a href="${collectoryUrl}/public/show/${params.id}"
+                                         title="view Date Resource page">${speciesList?.listName}</a> -->
+                        <g:message code="specieslistItem.list.h201" default="Species List:"/> ${speciesList?.listName}
                         &nbsp;&nbsp;
                         <div class="btn-group btn-group" id="listActionButtons">
                             <a href="#" id="toggleListInfo" class="btn btn-default btn-sm"><i
