@@ -974,8 +974,8 @@
                                     </td>
                                     <td class="matchedName">
                                         <g:if test="${result.guid}">
-                                            <a href="${bieUrl}/species/${result.guid}"
-                                               title="${bieTitle}">${result.matchedName}</a>
+                                            <!-- <a href="${bieUrl}/species/${result.guid}" title="${bieTitle}">${result.matchedName}</a> -->
+                                            ${result.matchedName}
                                         </g:if>
                                         <g:else>
                                             ${result.matchedName}
